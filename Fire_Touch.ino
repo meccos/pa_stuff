@@ -17,20 +17,11 @@ Adafruit_FreeTouch qt_1 = Adafruit_FreeTouch(CAPTOUCH_PIN, OVERSAMPLE_4, RESISTO
 int InitFail=0;
 
 void setup() {
-  Serial.begin(115200);
-  while (!Serial);
-  Serial.println("JP Test test");
-  
   
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
   InitFail = qt_1.begin();
   
-    if (InitFail != 0)
-	{		 
-      Serial.println("Failed to begin qt on pin A0");
-	}
-
 }
 
 bool checkpress();
